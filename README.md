@@ -40,6 +40,9 @@ Cada projeto terá uma pasta com o código e um diagrama da arquitetura.
 
 **Como estudei:** fui seguindo o curso do Skill Builder e praticando em paralelo. Usei IA como guia para organizar os passos, mas executei cada etapa por conta própria e fui perguntando o porquê das coisas, como a versão `2012-10-17` da policy.
 
+<img width="1363" height="694" alt="image" src="https://github.com/user-attachments/assets/c277e4bd-aba2-47aa-bdcd-f5daa0da2709" />
+
+
 **Próximos passos:** VPC com sub-redes pública e privada, Security Groups e uma instância EC2 (Módulo 5), e depois CloudFront para HTTPS.
 
 ## Para Contato
