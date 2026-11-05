@@ -8,8 +8,8 @@ Estudante de Ciência da Computação (Mackenzie), buscando migrar para a área 
 
 ## Projetos
 
-- ✅ **Projeto 1: Site estático** (S3) — [ver online o site](http://murilo-site-aws-2026.s3-website-us-east-1.amazonaws.com)
-- 🔜 **Projeto 2: Rede na nuvem** (VPC, EC2, Security Groups) — a fazer
+-  **Projeto 1: Site estático** (S3) - [ver online o site](http://murilo-site-aws-2026.s3-website-us-east-1.amazonaws.com)
+-  **Projeto 2: Rede na nuvem** (VPC, EC2, Security Groups) - Concluido
 
 ## Como está organizado
 
@@ -40,6 +40,15 @@ Cada projeto terá uma pasta com o código e um diagrama da arquitetura.
 **Como estudei:** fui seguindo o curso do Skill Builder e praticando em paralelo. Usei IA como guia para organizar os passos, mas executei cada etapa por conta própria e fui perguntando o porquê das coisas, como a versão `2012-10-17` da policy.
 
 <img width="1363" height="694" alt="image" src="https://github.com/user-attachments/assets/c277e4bd-aba2-47aa-bdcd-f5daa0da2709" />
+
+**Versionamento.**
+
+O versionamento guarda o histórico por nome de arquivo. Os arquivos que já existiam antes de ligar o recurso ficam com o ID null.
+
+Apagar uma versão específica é permanente. Apagar o objeto sem escolher versão só cria um delete marker, e dá para recuperar.
+
+Uma regra de ciclo de vida evita que as versões antigas se acumulem e gerem custo.
+Backup em outro lugar: como o index.html original também está no GitHub, eu sabia que não perderia nada se errasse.
 
 
 **Próximos passos:** VPC com sub-redes pública e privada, Security Groups e uma instância EC2 (Módulo 5), e depois CloudFront para HTTPS.
