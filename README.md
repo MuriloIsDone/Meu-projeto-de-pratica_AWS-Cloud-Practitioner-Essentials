@@ -8,9 +8,8 @@ Estudante de Ciência da Computação (Mackenzie), buscando migrar para a área 
 
 ## Projetos
 
-| # | Projeto | Serviços AWS | Status |
-| 1 | Site estático (veja online: (http://murilo-site-aws-2026.s3-website-us-east-1.amazonaws.com)) | S3 | Concluído  |
-| 2 | Rede na nuvem (VPC + servidor web) | VPC, EC2, Security Groups | A fazer |
+- ✅ **Projeto 1: Site estático** (S3) — [ver online o site](http://murilo-site-aws-2026.s3-website-us-east-1.amazonaws.com)
+- 🔜 **Projeto 2: Rede na nuvem** (VPC, EC2, Security Groups) — a fazer
 
 ## Como está organizado
 
