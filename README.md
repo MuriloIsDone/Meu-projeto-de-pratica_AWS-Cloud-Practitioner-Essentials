@@ -73,8 +73,7 @@ Cada projeto terá uma pasta com o código e um diagrama da arquitetura.
 **Resultado: Query x Scan**
 
 <p align="center">
-   <img width="1163" height="620" alt="image" src="https://github.com/user-attachments/assets/6af966bd-f7b9-458d-a13a-1019486115d3" width="48%" alt="Query dos pedidos da Ana: 3 itens lidos, 3 devolvidos">
-  
+  <img src="https://github.com/user-attachments/assets/6af966bd-f7b9-458d-a13a-1019486115d3" width="48%" alt="Query dos pedidos da Ana: 3 itens lidos, 3 devolvidos">
   <img src="https://github.com/user-attachments/assets/8169eb28-7a5f-4c87-a1d6-3d156e4dfa1d" width="48%" alt="Scan com filtro Valor maior que 100: 4 itens lidos, 2 devolvidos">
 </p>
 
