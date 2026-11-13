@@ -13,7 +13,7 @@ Estudante de Ciência da Computação (Mackenzie), buscando migrar para a área 
 - ✅ **Projeto 1: Site estático** (Amazon S3) · [ver online](http://murilo-site-aws-2026.s3-website-us-east-1.amazonaws.com)
 - ✅ **Projeto 2: Banco NoSQL** (Amazon DynamoDB) · consultas Query x Scan
 - ✅ **Projeto 3: Rede na nuvem** (VPC, EC2, Security Groups) · subnet pública e privada, Internet Gateway e servidor web
-- 
+  
 Cada projeto terá uma pasta com o código e um diagrama da arquitetura.
 
 ---
