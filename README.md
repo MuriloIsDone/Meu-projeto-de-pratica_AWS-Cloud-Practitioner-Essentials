@@ -100,6 +100,7 @@ Cada projeto terá uma pasta com o código e um diagrama da arquitetura.
 
 <p align="center">
   <img width="1491" height="225" alt="2-site-no-ar-ec2" src="https://github.com/user-attachments/assets/64180a97-7418-487e-897d-ee7d7ce80ead" />
+  
   <img width="3188" height="242" alt="3-instancia-running-3-checks" src="https://github.com/user-attachments/assets/53cb75d9-7d1e-4782-923c-b233ea3ea262" />
 </p>
 
