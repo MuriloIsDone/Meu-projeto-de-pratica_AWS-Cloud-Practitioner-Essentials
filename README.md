@@ -13,8 +13,8 @@ Estudante de Ciência da Computação (Mackenzie), buscando migrar para a área 
 - ✅ **Projeto 1: Site estático** (Amazon S3) · [ver online](http://murilo-site-aws-2026.s3-website-us-east-1.amazonaws.com)
 - ✅ **Projeto 2: Banco NoSQL** (Amazon DynamoDB) · consultas Query x Scan
 - ✅ **Projeto 3: Rede na nuvem** (VPC, EC2, Security Groups) · subnet pública e privada, Internet Gateway e servidor web
-  
-Cada projeto terá uma pasta com o código e um diagrama da arquitetura.
+
+Os projetos foram feitos pelo console da AWS; o código do site está na pasta `site/`.
 
 ---
 
@@ -84,10 +84,8 @@ Cada projeto terá uma pasta com o código e um diagrama da arquitetura.
 **O que fiz:** montei uma rede do zero, com uma VPC (`10.0.0.0/16`), uma subnet pública e uma privada, um Internet Gateway, uma route table e um security group. Depois subi uma instância EC2 na subnet pública, com um servidor Apache instalado por *user data*, e abri a página pela internet. Ao final, terminei a instância e apaguei toda a rede.
 
 <p align="center">
-  <img width="1700" height="438" alt="1-vpc-resource-map" src="https://github.com/user-attachments/assets/78083d6d-447f-4ea1-a6a0-4c5e1bf2c045" />
+  <img src="https://github.com/user-attachments/assets/78083d6d-447f-4ea1-a6a0-4c5e1bf2c045" width="800" alt="Resource map da VPC: subnet pública ligada à route table e ao Internet Gateway, subnet privada na route table principal">
 </p>
-
-
 
 **O que aprendi na prática**
 
@@ -99,15 +97,17 @@ Cada projeto terá uma pasta com o código e um diagrama da arquitetura.
 - **Ordem de limpeza importa.** A AWS não apaga um recurso enquanto outro depende dele: instância → Internet Gateway → route table → subnets → security group → VPC.
 
 <p align="center">
-  <img width="1491" height="225" alt="2-site-no-ar-ec2" src="https://github.com/user-attachments/assets/64180a97-7418-487e-897d-ee7d7ce80ead" />
-  
-  <img width="3188" height="242" alt="3-instancia-running-3-checks" src="https://github.com/user-attachments/assets/53cb75d9-7d1e-4782-923c-b233ea3ea262" />
+  <img src="https://github.com/user-attachments/assets/64180a97-7418-487e-897d-ee7d7ce80ead" width="650" alt="Página servida pela instância EC2 na subnet pública">
+</p>
+
+<p align="center">
+  <img src="COLE-AQUI-A-IMAGEM-RECORTADA" width="650" alt="Instância servidor-web em Running com 3 de 3 checks aprovados">
 </p>
 
 **Erros que me ensinaram algo**
 
 - Ao lançar a instância, deixei a opção de criar um security group novo com um nome que já existia na VPC, e a AWS recusou o lançamento. Aprendi a escolher o grupo existente. O grupo novo também vem com SSH aberto para o mundo por padrão, o que eu não queria.
-- Sobrou um `DD` no final do caminho do arquivo no script, o que criaria um arquivo `index.htmlDD` em vez do `index.html`. Percebi na revisão antes de lançar.
+- Sobrou um `DD` no final do caminho do arquivo no script, o que criaria um arquivo `index.htmlDD` em vez do `index.html`. Percebi ao revisar o formulário, depois da primeira falha de lançamento.
 - Parei a instância em vez de terminar. Parar pausa a computação, mas o disco continua cobrando. Terminar elimina o custo.
 
 **Custo:** usei `t3.micro` (cerca de US$ 0,01 por hora) por poucas horas, com os créditos do plano, e apaguei tudo depois, sem deixar recurso ligado.
