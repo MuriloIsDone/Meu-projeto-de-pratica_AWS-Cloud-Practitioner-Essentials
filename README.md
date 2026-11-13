@@ -12,8 +12,8 @@ Estudante de Ciência da Computação (Mackenzie), buscando migrar para a área 
 
 - ✅ **Projeto 1: Site estático** (Amazon S3) · [ver online](http://murilo-site-aws-2026.s3-website-us-east-1.amazonaws.com)
 - ✅ **Projeto 2: Banco NoSQL** (Amazon DynamoDB) · consultas Query x Scan
-- 🔜 **Projeto 3: Rede na nuvem** (VPC, EC2, Security Groups) · a fazer
-
+- ✅ **Projeto 3: Rede na nuvem** (VPC, EC2, Security Groups) · subnet pública e privada, Internet Gateway e servidor web
+- 
 Cada projeto terá uma pasta com o código e um diagrama da arquitetura.
 
 ---
@@ -76,6 +76,38 @@ Cada projeto terá uma pasta com o código e um diagrama da arquitetura.
   <img src="https://github.com/user-attachments/assets/6af966bd-f7b9-458d-a13a-1019486115d3" width="48%" alt="Query dos pedidos da Ana: 3 itens lidos, 3 devolvidos">
   <img src="https://github.com/user-attachments/assets/8169eb28-7a5f-4c87-a1d6-3d156e4dfa1d" width="48%" alt="Scan com filtro Valor maior que 100: 4 itens lidos, 2 devolvidos">
 </p>
+
+---
+
+### Projeto 3: Rede na nuvem com Amazon VPC e EC2
+
+**O que fiz:** montei uma rede do zero, com uma VPC (`10.0.0.0/16`), uma subnet pública e uma privada, um Internet Gateway, uma route table e um security group. Depois subi uma instância EC2 na subnet pública, com um servidor Apache instalado por *user data*, e abri a página pela internet. Ao final, terminei a instância e apaguei toda a rede.
+
+<p align="center">
+  <img src="COLE-AQUI-O-RESOURCE-MAP" width="650" alt="Resource map da VPC: subnet pública ligada à route table e ao Internet Gateway, subnet privada na route table principal">
+</p>
+
+**O que aprendi na prática**
+
+- **O que torna uma subnet pública não é o nome.** É a route table: a `subnet-publica` tinha uma rota `0.0.0.0/0` para o Internet Gateway, e a `subnet-privada` ficou na route table principal, só com a rota local.
+- **O Internet Gateway sozinho não basta.** Para a página abrir foram necessárias quatro peças juntas: o IGW anexado à VPC, a rota `0.0.0.0/0` para ele, um IP público na instância e uma regra do security group liberando a porta 80.
+- **Security group é stateful.** Liberei só a entrada (HTTP, porta 80). A resposta volta sem regra extra, e não abri SSH porque não precisava entrar na máquina.
+- **Uma rota para um recurso apagado vira *Blackhole*.** Depois de apagar o IGW, a rota `0.0.0.0/0` da route table ficou nesse estado.
+- **User data roda uma vez, na primeira inicialização.** Um erro de digitação no script só aparece depois que a instância sobe, então vale conferir o texto antes de lançar.
+- **Ordem de limpeza importa.** A AWS não apaga um recurso enquanto outro depende dele: instância → Internet Gateway → route table → subnets → security group → VPC.
+
+<p align="center">
+  <img src="COLE-AQUI-O-PRINT-DO-SITE" width="48%" alt="Página servida pela instância EC2 na subnet pública">
+  <img src="COLE-AQUI-O-PRINT-DA-INSTANCIA" width="48%" alt="Instância servidor-web em Running com 3 de 3 checks aprovados">
+</p>
+
+**Erros que me ensinaram algo**
+
+- Ao lançar a instância, deixei a opção de criar um security group novo com um nome que já existia na VPC, e a AWS recusou o lançamento. Aprendi a escolher o grupo existente. O grupo novo também vem com SSH aberto para o mundo por padrão, o que eu não queria.
+- Sobrou um `DD` no final do caminho do arquivo no script, o que criaria um arquivo `index.htmlDD` em vez do `index.html`. Percebi na revisão antes de lançar.
+- Parei a instância em vez de terminar. Parar pausa a computação, mas o disco continua cobrando. Terminar elimina o custo.
+
+**Custo:** usei `t3.micro` (cerca de US$ 0,01 por hora) por poucas horas, com os créditos do plano, e apaguei tudo depois, sem deixar recurso ligado.
 
 ---
 
