@@ -84,8 +84,10 @@ Cada projeto terá uma pasta com o código e um diagrama da arquitetura.
 **O que fiz:** montei uma rede do zero, com uma VPC (`10.0.0.0/16`), uma subnet pública e uma privada, um Internet Gateway, uma route table e um security group. Depois subi uma instância EC2 na subnet pública, com um servidor Apache instalado por *user data*, e abri a página pela internet. Ao final, terminei a instância e apaguei toda a rede.
 
 <p align="center">
-  <img src="COLE-AQUI-O-RESOURCE-MAP" width="650" alt="Resource map da VPC: subnet pública ligada à route table e ao Internet Gateway, subnet privada na route table principal">
+  <img width="1700" height="438" alt="1-vpc-resource-map" src="https://github.com/user-attachments/assets/78083d6d-447f-4ea1-a6a0-4c5e1bf2c045" />
 </p>
+
+
 
 **O que aprendi na prática**
 
@@ -97,8 +99,8 @@ Cada projeto terá uma pasta com o código e um diagrama da arquitetura.
 - **Ordem de limpeza importa.** A AWS não apaga um recurso enquanto outro depende dele: instância → Internet Gateway → route table → subnets → security group → VPC.
 
 <p align="center">
-  <img src="COLE-AQUI-O-PRINT-DO-SITE" width="48%" alt="Página servida pela instância EC2 na subnet pública">
-  <img src="COLE-AQUI-O-PRINT-DA-INSTANCIA" width="48%" alt="Instância servidor-web em Running com 3 de 3 checks aprovados">
+  <img width="1491" height="225" alt="2-site-no-ar-ec2" src="https://github.com/user-attachments/assets/64180a97-7418-487e-897d-ee7d7ce80ead" />
+  <img width="3188" height="242" alt="3-instancia-running-3-checks" src="https://github.com/user-attachments/assets/53cb75d9-7d1e-4782-923c-b233ea3ea262" />
 </p>
 
 **Erros que me ensinaram algo**
