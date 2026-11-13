@@ -101,7 +101,7 @@ Os projetos foram feitos pelo console da AWS; o código do site está na pasta `
 </p>
 
 <p align="center">
-  <img src="COLE-AQUI-A-IMAGEM-RECORTADA" width="650" alt="Instância servidor-web em Running com 3 de 3 checks aprovados">
+  <img width="3188" height="242" alt="3-instancia-running-3-checks" src="https://github.com/user-attachments/assets/9ae6fa6b-2699-4f64-b872-559bddc16cb4" />
 </p>
 
 **Erros que me ensinaram algo**
