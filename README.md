@@ -101,7 +101,7 @@ Os projetos foram feitos pelo console da AWS; o código do site está na pasta `
 </p>
 
 <p align="center">
-     <img width="1385" height="102" alt="3-instancia-running-3-checks" src="https://github.com/user-attachments/assets/582c628d-c322-4a54-be9c-f6ea92a9cec4" />
+     <img width="800" height="102" alt="3-instancia-running-3-checks" src="https://github.com/user-attachments/assets/582c628d-c322-4a54-be9c-f6ea92a9cec4" />
 </p>
 
 **Erros que me ensinaram algo**
